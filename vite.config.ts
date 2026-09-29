@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => {
             tailwindcss(),
             tanstackStart({ srcDirectory: "frontend" }),
             viteReact(),
-            nitro(),
+            nitro(process.env.VERCEL ? { preset: "vercel" } : {}),
           ],
   };
 });
