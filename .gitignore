@@ -18,8 +18,9 @@ dist-ssr
 .env.*
 !.env.example
 
-# Supabase CLI cache
+# Supabase CLI cache. config.toml makes Vercel add an integrations step.
 supabase/.temp/
+supabase/config.toml
 
 # Wrangler / Cloudflare
 .wrangler/
