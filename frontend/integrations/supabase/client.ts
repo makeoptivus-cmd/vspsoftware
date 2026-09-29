@@ -31,11 +31,13 @@ function createSupabaseClient() {
   // Use dot access for static build-time replacement in Vite client builds
   // Fall back to process.env in server/SSR environments
   const SUPABASE_URL =
+    __VSP_SUPABASE_URL__ ||
     import.meta.env.VITE_SUPABASE_URL ||
-    (typeof process !== 'undefined' ? (process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL) : undefined);
+    (typeof process !== 'undefined' ? process.env.SUPABASE_URL : undefined);
   const SUPABASE_PUBLISHABLE_KEY =
+    __VSP_SUPABASE_PUBLISHABLE_KEY__ ||
     import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY ||
-    (typeof process !== 'undefined' ? (process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY) : undefined);
+    (typeof process !== 'undefined' ? process.env.SUPABASE_PUBLISHABLE_KEY : undefined);
 
   if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
     const missing = [

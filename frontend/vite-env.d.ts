@@ -12,6 +12,9 @@ interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
+declare const __VSP_SUPABASE_URL__: string;
+declare const __VSP_SUPABASE_PUBLISHABLE_KEY__: string;
+
 declare namespace NodeJS {
   interface ProcessEnv {
     readonly VITE_SUPABASE_URL?: string;
